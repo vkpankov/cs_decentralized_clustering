@@ -1,3 +1,5 @@
 torch
 scipy
 numpy
+matplotlib
+networkx
