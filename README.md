@@ -38,9 +38,20 @@ python train.py \
     --checkpoint_dir checkpoints
 ```
 
-### Inference
+### Inference example
 
-TODO: Add scripts for LVP
+python lvp_simulation.py \
+    --grid_size 128 \
+    --agents_num 1000 \
+    --max_clusters 10 \
+    --batch_size 32 \
+    --comp_size 12 12 \
+    --step_size 0.2 \
+    --num_it_list 10 15 20 25 30 35 40 45 50 100 \
+    --num_simulations 30 \
+    --graph_type "random" \
+    --model_ckpt "/Users/vikentiy/Documents/cs_decentralized_clustering/checkpoints/last_c10_p12x12.pt" \
+    --pickle_path "results_12x12.pkl"
 
 ### Arguments
 
