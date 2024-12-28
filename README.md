@@ -47,23 +47,10 @@ python lvp_simulation.py \
     --max_clusters 10 \
     --batch_size 32 \
     --comp_size 12 12 \
-    --step_size 0.2 \
+    --step_size 0.01 \
     --num_it_list 10 15 20 25 30 35 40 45 50 100 \
     --num_simulations 30 \
     --graph_type "random" \
     --model_ckpt "checkpoints/last_c10_p12x12.pt" \
     --pickle_path "results_12x12.pkl"
 ```
-
-### Arguments
-
-| Argument          | Description                                                | Default       |
-|-------------------|------------------------------------------------------------|---------------|
-| `--clusters_num`  | Number of clusters.                                         | `10`          |
-| `--agents_num`    | Number of agents.                                           | `1000`        |
-| `--grid_size`     | Grid size for mapping agent states.                        | `128`         |
-| `--comp_size`     | Compressed grid size (height, width).                      | `(12, 12)`    |
-| `--batch_size`    | Batch size for training.                                   | `128`         |
-| `--epochs`        | Number of training epochs.                                 | `5`           |
-| `--lr`            | Initial learning rate for the optimizer.                          | `0.001`       |
-| `--checkpoint_dir`| Directory to save model checkpoints.                      | `checkpoints` |

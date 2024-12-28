@@ -1,18 +1,3 @@
-"""
-python lvp_simulation.py \
-    --grid_size 128 \
-    --agents_num 1000 \
-    --max_clusters 10 \
-    --batch_size 32 \
-    --comp_size 12 12 \
-    --step_size 0.2 \
-    --num_it_list 10 15 20 25 30 35 40 45 50 100 \
-    --num_simulations 30 \
-    --graph_type "random" \
-    --model_ckpt "/Users/vikentiy/Documents/cs_decentralized_clustering/checkpoints/last_c10_p12x12.pt" \
-    --pickle_path "results_12x12.pkl"
-"""
-
 import argparse
 import torch
 import torch.nn as nn
@@ -45,11 +30,9 @@ def parse_arguments():
                         help="List of iteration values to run the consensus process.")
     parser.add_argument("--num_simulations", type=int, default=10,
                         help="Number of repeated simulations for each num_it.")
-    parser.add_argument("--graph_type", type=str, default="circular",
+    parser.add_argument("--graph_type", type=str, default="random",
                         choices=["circular", "random"],
                         help="Type of graph topology to use: 'circular' or 'random'.")
-    parser.add_argument("--neg_val", type=int, default=-100,
-                        help="Negative threshold for removing edges in adjacency matrix (unused here, but kept).")
     parser.add_argument("--model_ckpt", type=str, default="last_c10_p12x12.pt",
                         help="Path to a pre-trained model checkpoint.")
     parser.add_argument("--pickle_path", type=str, default="pickled_12x12_mae_costs.pkl",
